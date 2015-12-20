@@ -1,0 +1,20 @@
+[general]
+name=Minkowski dimension calculator
+description=Plugin calculates Minkowski dimension (also known as Minkowski–Bouligand dimension; box-counting dimension) for features of vector layer.
+category=Vector
+version=1.0
+qgisMinimumVersion=2.0
+
+author=Eduard Kazakov
+email=silenteddie@gmail.com
+
+icon=icon.png
+
+tags=fractals, vector, Minkowski–Bouligand, Minkowski, box-counting
+
+homepage=http://www.ekazakov.info/
+tracker=
+repository=https://github.com/silenteddie/minkowskiDimCalculator
+
+experimental=False
+deprecated=False
