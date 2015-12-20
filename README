@@ -1,5 +1,5 @@
 /***************************************************************************
- MinkowskyDimCalculator init
+ MinkowskyDimCalculator
                                  A QGIS plugin
  Plugin calculates Minkowski dimension (also known as Minkowski–Bouligand
  dimension; box-counting dimension) for features of vector layer.
