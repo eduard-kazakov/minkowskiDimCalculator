@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'mdc_features_ui.ui'
 #
-# Created: Wed Dec 23 11:49:37 2015
+# Created: Wed Dec 23 16:13:53 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -27,6 +27,8 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName(_fromUtf8("Dialog"))
         Dialog.resize(362, 342)
+        Dialog.setMinimumSize(QtCore.QSize(362, 342))
+        Dialog.setMaximumSize(QtCore.QSize(362, 342))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/plugins/minkowskiDimCalculator/icon.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Dialog.setWindowIcon(icon)
@@ -88,7 +90,7 @@ class Ui_Dialog(object):
         self.featureGridTab = QtGui.QWidget()
         self.featureGridTab.setObjectName(_fromUtf8("featureGridTab"))
         self.featureGridGroupBox = QtGui.QGroupBox(self.featureGridTab)
-        self.featureGridGroupBox.setGeometry(QtCore.QRect(10, 10, 311, 171))
+        self.featureGridGroupBox.setGeometry(QtCore.QRect(10, 10, 311, 174))
         self.featureGridGroupBox.setObjectName(_fromUtf8("featureGridGroupBox"))
         self.label_7 = QtGui.QLabel(self.featureGridGroupBox)
         self.label_7.setGeometry(QtCore.QRect(7, 25, 112, 23))
@@ -118,9 +120,15 @@ class Ui_Dialog(object):
         self.featureGridNumberOfStepsComboBox.setGeometry(QtCore.QRect(125, 140, 124, 27))
         self.featureGridNumberOfStepsComboBox.setObjectName(_fromUtf8("featureGridNumberOfStepsComboBox"))
         self.tabWidget.addTab(self.featureGridTab, _fromUtf8(""))
+        self.progressBar = QtGui.QProgressBar(Dialog)
+        self.progressBar.setEnabled(True)
+        self.progressBar.setGeometry(QtCore.QRect(20, 312, 141, 21))
+        self.progressBar.setMaximum(0)
+        self.progressBar.setProperty("value", -1)
+        self.progressBar.setObjectName(_fromUtf8("progressBar"))
 
         self.retranslateUi(Dialog)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
@@ -130,8 +138,12 @@ class Ui_Dialog(object):
         self.label.setText(_translate("Dialog", "Layer", None))
         self.cancelButton.setText(_translate("Dialog", "Cancel", None))
         self.layerGridGroupBox.setTitle(_translate("Dialog", "Settings", None))
+        self.layerGridAttributeNameLineEdit.setToolTip(_translate("Dialog", "Name of field that will be created or recalculated for vector layer", None))
         self.layerGridAttributeNameLineEdit.setText(_translate("Dialog", "mink_dem", None))
+        self.layerGridNumberOfStepsSpinBox.setToolTip(_translate("Dialog", "This is how much grids will be calculated", None))
         self.layerGridAutoButton.setText(_translate("Dialog", "Auto", None))
+        self.layerGridStartSizeLineEdit.setToolTip(_translate("Dialog", "Size of cell at first step. The biggest one. You can choose it based on extent - 4 or 5 cells in a row is good start", None))
+        self.layerGridEndSizeLineEdit.setToolTip(_translate("Dialog", "Size of cell on last step. The smallest one. For maximal accurace it can be near smallest distance between feature\'s nodes. For reason of optimization can be larger, depending on scale of your research", None))
         self.label_2.setText(_translate("Dialog", "Attribute name", None))
         self.label_5.setText(_translate("Dialog", "Number of steps", None))
         self.label_3.setText(_translate("Dialog", "Start cell size", None))
@@ -139,9 +151,13 @@ class Ui_Dialog(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.layerGridTab), _translate("Dialog", "Layer grid", None))
         self.featureGridGroupBox.setTitle(_translate("Dialog", "Settings", None))
         self.label_7.setText(_translate("Dialog", "Attribute name", None))
+        self.featureGridAttributeNameLineEdit.setToolTip(_translate("Dialog", "Name of field that will be created or recalculated for vector layer", None))
         self.featureGridAttributeNameLineEdit.setText(_translate("Dialog", "mink_dem", None))
+        self.featureGridStartSizeComboBox.setToolTip(_translate("Dialog", "Size of cell at first step. The biggest one. You can choose it based on extent - 4 or 5 cells in a row is good start", None))
         self.label_8.setText(_translate("Dialog", "Start cell size", None))
+        self.featureGridEndSizeComboBox.setToolTip(_translate("Dialog", "Size of cell on last step. The smallest one. For maximal accurace it can be near smallest distance between feature\'s nodes. For reason of optimization can be larger, depending on scale of your research", None))
         self.featureGridAutoCheckBox.setText(_translate("Dialog", "Auto", None))
         self.label_9.setText(_translate("Dialog", "End cell size", None))
         self.label_10.setText(_translate("Dialog", "Number of steps", None))
+        self.featureGridNumberOfStepsComboBox.setToolTip(_translate("Dialog", "This is how much grids will be calculated", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.featureGridTab), _translate("Dialog", "Feature grid", None))

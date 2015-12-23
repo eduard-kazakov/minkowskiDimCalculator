@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'mdc_about_ui.ui'
 #
-# Created: Wed Dec 23 12:04:47 2015
+# Created: Wed Dec 23 16:01:30 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -27,6 +27,8 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName(_fromUtf8("Dialog"))
         Dialog.resize(291, 300)
+        Dialog.setMinimumSize(QtCore.QSize(291, 300))
+        Dialog.setMaximumSize(QtCore.QSize(554, 383))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/plugins/minkowskiDimCalculator/icon.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Dialog.setWindowIcon(icon)

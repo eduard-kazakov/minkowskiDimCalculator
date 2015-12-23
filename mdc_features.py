@@ -22,6 +22,7 @@
  *                                                                         *
  ***************************************************************************/
 """
+from PyQt4.QtGui import QApplication
 
 from ui import mdc_features_ui
 from PyQt4 import QtCore, QtGui
@@ -49,6 +50,9 @@ class MDCFeaturesDlg(QtGui.QWidget):
 
         # Change fields selector when layer changed
         self.connect(self.ui.layerComboBox, QtCore.SIGNAL("currentIndexChanged(const QString&)"), self.layerChanged)
+
+        #deactivate progress bar
+        self.ui.progressBar.setVisible(False)
 
         # Fill vector layers combobox with polyline layers
         polylineLayers = [layer.name() for layer in QgsMapLayerRegistry.instance().mapLayers().values() if
@@ -109,6 +113,10 @@ class MDCFeaturesDlg(QtGui.QWidget):
             QtGui.QMessageBox.critical(None, "Error", 'Incorrect inputs!')
             return
 
+        #activate progress bar
+        self.ui.progressBar.setVisible(True)
+        QApplication.processEvents()
+
         stepSize = (startCellSize - endCellSize) / (numberOfSteps + 1)
 
         currentStep = -1
@@ -130,6 +138,7 @@ class MDCFeaturesDlg(QtGui.QWidget):
             featuresDictsList.append(dict(fet_id=feature.id(), N=[], L=[]))
 
         while currentStep < int(numberOfSteps + 1):
+            QApplication.processEvents()
             memoryLayer = mdc_lib.generateMemoryGridByMinMaxAndSteps(userLayer.crs().authid(),
                 extentDict, currentCellSize, currentCellSize)
             if self.ui.onlySelectedFeaturesCheckBox.isChecked():
@@ -139,6 +148,7 @@ class MDCFeaturesDlg(QtGui.QWidget):
 
             # filling featureDict for every feature
             for feature in lineFeatures:
+                QApplication.processEvents()
                 N = mdc_lib.getNumberOfIntersectedFeaturesBetweenLayerAndFeature(feature, memoryLayer)
                 idx = mdc_lib.findDictIndexInList(featuresDictsList, 'fet_id', feature.id())
                 featuresDictsList[idx]["N"].append(N)
@@ -164,6 +174,7 @@ class MDCFeaturesDlg(QtGui.QWidget):
         # last time going through all features - calculating minkowsky dimension based
         # on N and L lists from featureDicts
         for feature in lineFeatures:
+            QApplication.processEvents()
             idx = mdc_lib.findDictIndexInList(featuresDictsList, 'fet_id', feature.id())
             logN = []
             logL = []
@@ -178,6 +189,10 @@ class MDCFeaturesDlg(QtGui.QWidget):
 
         userLayer.updateFields()
         userLayer.commitChanges()
+
+        #deactivate progress bar
+        self.ui.progressBar.setVisible(False)
+
         QtGui.QMessageBox.about(None, "Success", "Done!")
 
     # If "run" was pressed with Feature Grid Tab activated
@@ -207,6 +222,10 @@ class MDCFeaturesDlg(QtGui.QWidget):
             QtGui.QMessageBox.critical(None, "Error", 'Selected layer is not valid!')
             return
 
+        #activate progress bar
+        self.ui.progressBar.setVisible(True)
+        QApplication.processEvents()
+
         # If attribute name more than 10 symbols, cut it (for shapefile)
         if len(self.ui.featureGridAttributeNameLineEdit.text()) > 10:
             mdcAttrName = self.ui.featureGridAttributeNameLineEdit.text()[0:10]
@@ -229,6 +248,7 @@ class MDCFeaturesDlg(QtGui.QWidget):
 
         # fo through all features, calculation minkowsky diimension for every
         for feature in lineFeatures:
+            QApplication.processEvents()
             # get settings automaticly or from selected fields
             if self.ui.featureGridAutoCheckBox.isChecked():
                 autoSettings = mdc_lib.getAutoParametersForFeature(feature)
@@ -254,6 +274,7 @@ class MDCFeaturesDlg(QtGui.QWidget):
             LList = []
 
             while currentStep < int(numberOfSteps + 1):
+                QApplication.processEvents()
                 memoryLayer = mdc_lib.generateMemoryGridByMinMaxAndSteps(userLayer.crs().authid(),
                                                                         extentDict, currentCellSize, currentCellSize)
                 N = mdc_lib.getNumberOfIntersectedFeaturesBetweenLayerAndFeature(feature, memoryLayer)
@@ -270,12 +291,16 @@ class MDCFeaturesDlg(QtGui.QWidget):
             for L in LList:
                 logL.append(np.log(1 / L))
 
+            QApplication.processEvents()
             minkowskyDimension = mdc_lib.getSlopeOfLinearRegression(logL, logN)
             attrIdx = userLayer.fieldNameIndex(mdcAttrName)
             userLayer.changeAttributeValue(feature.id(), attrIdx, float(minkowskyDimension))
 
         userLayer.updateFields()
         userLayer.commitChanges()
+
+        #deactivate progress bar
+        self.ui.progressBar.setVisible(False)
         QtGui.QMessageBox.about(None, "Success", "Done!")
 
 

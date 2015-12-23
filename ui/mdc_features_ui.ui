@@ -10,6 +10,18 @@
     <height>342</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>362</width>
+    <height>342</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>362</width>
+    <height>342</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Minkowski dimension for features</string>
   </property>
@@ -89,7 +101,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="layerGridTab">
     <attribute name="title">
@@ -110,6 +122,9 @@
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="1" column="1">
        <widget class="QLineEdit" name="layerGridAttributeNameLineEdit">
+        <property name="toolTip">
+         <string>Name of field that will be created or recalculated for vector layer</string>
+        </property>
         <property name="text">
          <string>mink_dem</string>
         </property>
@@ -117,6 +132,9 @@
       </item>
       <item row="4" column="1">
        <widget class="QSpinBox" name="layerGridNumberOfStepsSpinBox">
+        <property name="toolTip">
+         <string>This is how much grids will be calculated</string>
+        </property>
         <property name="maximum">
          <number>999999999</number>
         </property>
@@ -133,10 +151,18 @@
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QLineEdit" name="layerGridStartSizeLineEdit"/>
+       <widget class="QLineEdit" name="layerGridStartSizeLineEdit">
+        <property name="toolTip">
+         <string>Size of cell at first step. The biggest one. You can choose it based on extent - 4 or 5 cells in a row is good start</string>
+        </property>
+       </widget>
       </item>
       <item row="3" column="1">
-       <widget class="QLineEdit" name="layerGridEndSizeLineEdit"/>
+       <widget class="QLineEdit" name="layerGridEndSizeLineEdit">
+        <property name="toolTip">
+         <string>Size of cell on last step. The smallest one. For maximal accurace it can be near smallest distance between feature's nodes. For reason of optimization can be larger, depending on scale of your research</string>
+        </property>
+       </widget>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_2">
@@ -179,7 +205,7 @@
        <x>10</x>
        <y>10</y>
        <width>311</width>
-       <height>171</height>
+       <height>174</height>
       </rect>
      </property>
      <property name="title">
@@ -207,6 +233,9 @@
         <height>23</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string>Name of field that will be created or recalculated for vector layer</string>
+      </property>
       <property name="text">
        <string>mink_dem</string>
       </property>
@@ -219,6 +248,9 @@
         <width>124</width>
         <height>27</height>
        </rect>
+      </property>
+      <property name="toolTip">
+       <string>Size of cell at first step. The biggest one. You can choose it based on extent - 4 or 5 cells in a row is good start</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_8">
@@ -242,6 +274,9 @@
         <width>124</width>
         <height>27</height>
        </rect>
+      </property>
+      <property name="toolTip">
+       <string>Size of cell on last step. The smallest one. For maximal accurace it can be near smallest distance between feature's nodes. For reason of optimization can be larger, depending on scale of your research</string>
       </property>
      </widget>
      <widget class="QCheckBox" name="featureGridAutoCheckBox">
@@ -292,9 +327,31 @@
         <height>27</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string>This is how much grids will be calculated</string>
+      </property>
      </widget>
     </widget>
    </widget>
+  </widget>
+  <widget class="QProgressBar" name="progressBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>312</y>
+     <width>141</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>0</number>
+   </property>
+   <property name="value">
+    <number>-1</number>
+   </property>
   </widget>
  </widget>
  <resources>
