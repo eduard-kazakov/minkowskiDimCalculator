@@ -40,21 +40,20 @@ class MDC:
         dirPath = os.path.dirname(os.path.abspath(__file__))
         self.action = QAction(u"Minkowski dimension calculator", self.iface.mainWindow())
         self.action.setIcon(QIcon(dirPath + "/icon.png"))
-        self.iface.addPluginToMenu(u"Minkowski dimension calculator",self.action)
+        self.iface.addPluginToVectorMenu(u"Minkowski dimension calculator",self.action)
         self.action.setStatusTip(u"Minkowski dimension calculator")
-        self.iface.addToolBarIcon(self.action)
+        self.iface.addVectorToolBarIcon(self.action)
         QObject.connect(self.action, SIGNAL("triggered()"), self.run)
 
         self.aboutAction = QAction(u"About", self.iface.mainWindow())
         QObject.connect(self.aboutAction, SIGNAL("triggered()"), self.about)
-        self.iface.addPluginToMenu(u"Minkowski dimension calculator", self.aboutAction)
+        self.iface.addPluginToVectorMenu(u"Minkowski dimension calculator", self.aboutAction)
 
     def unload(self):
-        self.iface.removeToolBarIcon(self.action)
-        self.iface.removePluginMenu(u"Minkowski dimension calculator",self.action)
+        self.iface.removeVectorToolBarIcon(self.action)
+        self.iface.removePluginVectorMenu(u"Minkowski dimension calculator",self.action)
 
-        self.iface.removeToolBarIcon(self.aboutAction)
-        self.iface.removePluginMenu(u"Minkowski dimension calculator",self.aboutAction)
+        self.iface.removePluginVectorMenu(u"Minkowski dimension calculator",self.aboutAction)
 
     def run(self):
         self.MDCFeaturesDlg = MDCFeaturesDlg()

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'mdc_features_ui.ui'
 #
-# Created: Sun Dec 20 04:54:40 2015
+# Created: Wed Dec 23 11:49:37 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -28,7 +28,7 @@ class Ui_Dialog(object):
         Dialog.setObjectName(_fromUtf8("Dialog"))
         Dialog.resize(362, 342)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/icon/icon.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/plugins/minkowskiDimCalculator/icon.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Dialog.setWindowIcon(icon)
         self.runButton = QtGui.QPushButton(Dialog)
         self.runButton.setGeometry(QtCore.QRect(260, 306, 85, 27))
@@ -145,5 +145,3 @@ class Ui_Dialog(object):
         self.label_9.setText(_translate("Dialog", "End cell size", None))
         self.label_10.setText(_translate("Dialog", "Number of steps", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.featureGridTab), _translate("Dialog", "Feature grid", None))
-
-import res_rc

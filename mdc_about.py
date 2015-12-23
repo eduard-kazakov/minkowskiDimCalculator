@@ -23,7 +23,7 @@
  ***************************************************************************/
 """
 
-import mdc_about_ui
+from ui import mdc_about_ui
 from PyQt4 import QtGui
 
 

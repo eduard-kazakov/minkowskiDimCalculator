@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'mdc_about_ui.ui'
 #
-# Created: Wed Dec 16 03:04:17 2015
-#      by: PyQt4 UI code generator 4.10.2
+# Created: Wed Dec 23 12:04:47 2015
+#      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -28,7 +28,7 @@ class Ui_Dialog(object):
         Dialog.setObjectName(_fromUtf8("Dialog"))
         Dialog.resize(291, 300)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/icon/icon.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/plugins/minkowskiDimCalculator/icon.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Dialog.setWindowIcon(icon)
         self.gridLayout = QtGui.QGridLayout(Dialog)
         self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
@@ -67,5 +67,3 @@ class Ui_Dialog(object):
         self.label.setText(_translate("Dialog", "Minkowski dimension calculator", None))
         self.label_2.setText(_translate("Dialog", "ver. 1.0", None))
         self.label_3.setText(_translate("Dialog", "<html><head/><body><p><span style=\" font-size:9pt;\">Minkowski dimension calculator plugin</span></p><p><span style=\" font-size:9pt;\">Calculates Minkowski dimension (also known as Minkowski–Bouligand dimension; box-counting dimension) for vector layer features as attribute.</span></p><p><span style=\" font-size:9pt;\">You can send your suggestions on silenteddie@gmail.com</span></p><p><span style=\" font-size:9pt;\">Minkowski dimension calculator - Licence GNU GPL 2</span></p><p><span style=\" font-size:9pt;\">Written in 2015 by Eduard Kazakov (</span><a href=\"http://www.ekazakov.info\"><span style=\" font-size:9pt; text-decoration: underline; color:#0000ff;\">ekazakov.info</span></a><span style=\" font-size:9pt;\">)</span></p></body></html>", None))
-
-import res

@@ -23,12 +23,13 @@
  ***************************************************************************/
 """
 
-import mdc_features_ui
+from ui import mdc_features_ui
 from PyQt4 import QtCore, QtGui
 from PyQt4.QtCore import QVariant
 from qgis.core import *
 from qgis.core import QgsMapLayerRegistry
 import mdc_lib
+import resources
 import numpy as np
 
 
