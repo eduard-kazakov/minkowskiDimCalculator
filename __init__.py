@@ -1,17 +1,14 @@
 # -*- coding: utf-8 -*-
-
 """
 /***************************************************************************
- MinkowskyDimCalculator init
+ MinkowskiDimCalculator
                                  A QGIS plugin
- Plugin calculates Minkowski dimension (also known as Minkowski–Bouligand
- dimension; box-counting dimension) for features of vector layer.
+ Minkowski fractal dimension calculation for vector layer features
 
                               -------------------
-        begin                : 2015-12-16
-        copyright            : (C) 2015 by Eduard Kazakov
+        begin                : 2019-01-01
+        copyright            : (C) 2019 by Eduard Kazakov
         email                : silenteddie@gmail.com
-        homepage             : http://ekazakov.info
  ***************************************************************************/
 
 /***************************************************************************
@@ -24,6 +21,14 @@
  ***************************************************************************/
 """
 
-def classFactory(iface):
-    from mdc import MDC
-    return MDC(iface)
+
+# noinspection PyPep8Naming
+def classFactory(iface):  # pylint: disable=invalid-name
+    """Load MinkowskiDimCalculator class from file MinkowskiDimCalculator.
+
+    :param iface: A QGIS interface instance.
+    :type iface: QgsInterface
+    """
+    #
+    from .minkowskiDimCalculator import MinkowskiDimCalculator
+    return MinkowskiDimCalculator(iface)

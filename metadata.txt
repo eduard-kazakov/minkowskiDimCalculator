@@ -1,21 +1,20 @@
 [general]
-name=Minkowski dimension calculator
-description=Minkowski fractal dimension calculation for vector layer features
-about=Plugin calculates Minkowski fractal dimension (also known as Minkowski–Bouligand dimension; box-counting dimension) for features of vector layer.
-category=Vector
-version=1.0
-qgisMinimumVersion=2.0
-
-author=Eduard Kazakov
+name = Minkowski Dimension Calculator
+qgisMinimumVersion = 2.99
+qgisMaximumVersion = 3.99
+about = Minkowski fractal dimension calculation for vector layer features
+description = Plugin calculates Minkowski dimension (also known as Minkowski–Bouligand dimension, box-counting dimension) for features of vector layer.
+category = Vector
+version = 2.0
+author = Eduard Kazakov
 email=silenteddie@gmail.com
+changelog=
+    2.0 : update to QGIS 3
 
-icon=icon.png
-
-tags=fractals, vector, Minkowski–Bouligand, Minkowski, box-counting
-
-homepage=http://www.ekazakov.info/
-tracker=https://github.com/silenteddie/minkowskiDimCalculator/issues
-repository=https://github.com/silenteddie/minkowskiDimCalculator
-
-experimental=False
-deprecated=False
+tags = fractals, vector, Minkowski-Bouligand, Minkowski, box-counting
+homepage = http://ekazakov.info/projects/mdc_tutorial.html
+tracker = https://github.com/silenteddie/minkowskiDimCalculator/issues
+repository = https://github.com/silenteddie/minkowskiDimCalculator
+icon = icon.png
+experimental = False
+deprecated = False
