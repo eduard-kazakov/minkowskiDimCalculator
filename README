@@ -1,25 +1,19 @@
-"""
-/***************************************************************************
- MinkowskiDimCalculator
-                                 A QGIS plugin
- Minkowski fractal dimension calculation for vector layer features
- 
-                              -------------------
-        begin                : 2019-01-01
-        copyright            : (C) 2019 by Eduard Kazakov
-        email                : silenteddie@gmail.com
- ***************************************************************************/
+# Minkowski Dimension Calculator
+A QGIS plugin that calculates Minkowski dimension (also known as Minkowski–Bouligand dimension, box-counting dimension) for features of vector layer.
 
-/***************************************************************************
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- *                                                                         *
- ***************************************************************************/
-"""
+![alt text](interface.png)
 
- Put this folder at QGIS 3 python plugins directory
- Plugin also available in QGIS Plugins repository
- Manual available at: http://ekazakov.info/projects/mdc_tutorial.html
+## Documentation
+
+General plugin documentation is available here: https://ekazakov.me/minkowski-dimension-calculator-qgis-plugin
+
+## Installation
+
+The plugin is available in the official QGIS Plugin Repository.
+
+You can also install it from ZIP archive.
+
+
+## Contacts
+
+Eduard Kazakov | ee.kazakov@gmail.com
