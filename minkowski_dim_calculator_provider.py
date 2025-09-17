@@ -27,10 +27,10 @@ class MinkowskiDimCalculatorProvider(QgsProcessingProvider):
         return 'minkowski_dim_calculator_provider'
 
     def name(self):
-        return 'Minkowski dimension calculator'
+        return 'Minkowski Dimension Calculator'
 
     def icon(self):
         return QIcon(os.path.join(os.path.dirname(__file__), 'icon.png'))
 
     def longName(self):
-        return 'Minkowski dimension calculator'
+        return 'Minkowski Dimension Calculator'
